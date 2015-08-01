@@ -1,0 +1,13 @@
+// Graphics
+//
+
+.watermark {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  display: inline-block;
+  width: 42px;
+  height: 50px;
+  background: url('../img/sprite.png') no-repeat -0px -0px;
+  background: url('../img/sprite.svg') no-repeat -0px -0px,none;
+}

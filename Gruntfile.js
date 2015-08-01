@@ -54,6 +54,17 @@ module.exports = function(grunt) {
       }
     },
 
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'src/assets/images/',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: 'dist/assets/img/'
+        }]
+      }
+    },
+
     copy: {
       index: {
         src: 'src/index.html',
@@ -107,9 +118,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['clean', 'sass', 'jshint', 'concat', 'uglify', 'copy']);
+  grunt.registerTask('default', ['clean', 'sass', 'jshint', 'concat', 'uglify', 'imagemin', 'copy']);
 
 };
