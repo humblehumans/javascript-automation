@@ -68,14 +68,16 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      index: {
-        src: 'src/index.html',
-        dest: 'dist/index.html',
+      files: {
+        cwd: 'src',
+        src: '**/*.html',
+        dest: 'dist',
+        expand: true,
         options: {
           process: function(content, srcpath) {
             return grunt.template.process(content);
           }
-        }
+        }          
       }
     },
 
