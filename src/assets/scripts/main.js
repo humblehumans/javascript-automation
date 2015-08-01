@@ -1,6 +1,6 @@
 'use strict';
 
 $(function () {
-    window.alert( 'congrats you are good to go kid' );
-    $('#test').tooltip();
+    window.console.log( 'Congrats, you are good to go kid.' );
+    $('#test-bootstrap-js').tooltip();
 });
