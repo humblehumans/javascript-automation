@@ -1,7 +1,7 @@
 {
   "name": "javascript-automation",
   "version": "2.0.0",
-  "description": "Stop doing mundane work. Stripped down verison forked from Craig Phares at Six Overground",
+  "description": "Stop doing mundane work. Bare Bones verison forked from Craig Phares.",
   "main": "index.html",
   "scripts": {
     "test": "grunt test"
