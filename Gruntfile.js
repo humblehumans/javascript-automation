@@ -2,12 +2,8 @@
 
 module.exports = function(grunt) {
 
-  var bobblehead = grunt.option('bobblehead') || 'stormtrooper';
-
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    bobblehead: bobblehead,
 
     clean: {
       dist: ['dist']
@@ -26,33 +22,10 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      all: ['Gruntfile.js', 'src/**/*.js', 'spec/**/*.js'],
+      all: ['Gruntfile.js', 'src/**/*.js'],
       options: {
         jshintrc: '.jshintrc'
       }
-    },
-
-    jasmine: {
-      dist: {
-        src: [
-          'src/soundboard/soundboard.js',
-          'src/soundboard/models/**/*.js',
-          'src/soundboard/views/**/*.js',
-          'src/soundboard.js'
-        ],
-        options: {
-          specs: 'spec/**/*spec.js',
-          helpers: 'spec/**/*helper.js',
-          vendor: [
-            'bower_components/jquery/dist/jquery.js',
-            'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-            'bower_components/jqueryui/jquery-ui.js',
-            'bower_components/underscore/underscore.js',
-            'bower_components/backbone/backbone.js',
-            'bower_components/howler/howler.js'
-          ]
-        }
-      } 
     },
 
     concat: {
@@ -60,8 +33,6 @@ module.exports = function(grunt) {
         src: [
           'bower_components/html5-boilerplate/dist/css/normalize.css',
           'bower_components/html5-boilerplate/dist/css/main.css',
-          // 'bower_components/jqueryui/themes/base/slider.css',
-          // 'bower_components/jqueryui/themes/base/theme.css',
           'dist/assets/css/main.css'
         ],
         dest: 'dist/assets/css/app.css'
@@ -69,14 +40,7 @@ module.exports = function(grunt) {
       js: {
         src: [
           'bower_components/jquery/dist/jquery.js',
-          'bower_components/jqueryui/jquery-ui.js',
-          'bower_components/howler/howler.js',
-          'bower_components/underscore/underscore.js',
-          'bower_components/backbone/backbone.js',
-          'src/soundboard/soundboard.js',
-          'src/soundboard/models/**/*.js',
-          'src/soundboard/views/**/*.js',
-          'src/soundboard.js'
+          'src/assets/scripts/main.js'
         ],
         dest: 'dist/assets/js/app.js'
       }
@@ -90,28 +54,7 @@ module.exports = function(grunt) {
       }
     },
 
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'src/assets/images/',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/assets/images/'
-        }]
-      }
-    },
-
     copy: {
-      audio: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/assets/audio/',
-            src: ['**/*'],
-            dest: 'dist/assets/audio/'
-          }
-        ]
-      },
       index: {
         src: 'src/index.html',
         dest: 'dist/index.html',
@@ -123,15 +66,6 @@ module.exports = function(grunt) {
       }
     },
 
-    connect: {
-      server: {
-        options: {
-          port: 8000,
-          base: 'dist'
-        }
-      }
-    },
-    
     watch: {
       options: {
         livereload: true
@@ -171,19 +105,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('test', ['jasmine']);
-
-  grunt.registerTask('start', ['connect:server:keepalive']);
-
-  grunt.registerTask('default', ['clean', 'sass', 'jshint', 'concat', 'uglify',
-    'imagemin', 'copy']);
+  grunt.registerTask('default', ['clean', 'sass', 'jshint', 'concat', 'uglify', 'copy']);
 
 };

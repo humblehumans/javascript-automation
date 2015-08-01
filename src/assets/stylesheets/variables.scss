@@ -1,9 +1,12 @@
-$bobble-distance-short: 4px;
-$bobble-distance-long: 8px;
+// Standard Colors
+//
 
-$primary-color: #ff00cc;
-// $primary-color: #00ffff;
+$black: #000;
+$white: #fff;
 
-$button-color: $primary-color;
-$button-border-color: darken($primary-color, 0.2);
-$button-glow-color: rgba($primary-color, 0.5);
+// Brand Colors
+//
+
+$primary-color: #ff0000;
+
+
