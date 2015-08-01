@@ -33,6 +33,7 @@ module.exports = function(grunt) {
         src: [
           'bower_components/html5-boilerplate/dist/css/normalize.css',
           'bower_components/html5-boilerplate/dist/css/main.css',
+          'bower_components/bootstrap/dist/css/bootstrap.min.css',
           'dist/assets/css/main.css'
         ],
         dest: 'dist/assets/css/app.css'
@@ -40,6 +41,7 @@ module.exports = function(grunt) {
       js: {
         src: [
           'bower_components/jquery/dist/jquery.js',
+          'bower_components/bootstrap/dist/js/bootstrap.js',
           'src/assets/scripts/main.js'
         ],
         dest: 'dist/assets/js/app.js'
