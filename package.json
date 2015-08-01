@@ -1,7 +1,7 @@
 {
   "name": "javascript-automation",
   "version": "2.0.0",
-  "description": "Stop doing mundane work. Bare Bones verison forked from Craig Phares. This branch use Boostrap.",
+  "description": "Stop doing mundane work. Bare Bones verison forked from Craig Phares. This branch uses Boostrap.",
   "main": "index.html",
   "scripts": {
     "test": "grunt test"
