@@ -1,7 +1,4 @@
 @import 'variables.scss';
 @import 'mixins.scss';
-
-body {
-  background-color: $primary-color;
-  padding: 100px;
-}
+@import 'typography.scss';
+@import 'structure.scss';

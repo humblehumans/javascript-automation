@@ -1,5 +1,5 @@
 'use strict';
 
 $(function () {
-    window.alert( 'Do It!' );
+    window.alert( 'congrats you are good to go kid' );
 });
