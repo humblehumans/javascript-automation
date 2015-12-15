@@ -70,12 +70,7 @@ module.exports = function(grunt) {
         cwd: 'src',
         src: '**/*.html',
         dest: 'dist',
-        expand: true,
-        options: {
-          process: function(content, srcpath) {
-            return grunt.template.process(content);
-          }
-        }          
+        expand: true     
       }
     },
 
