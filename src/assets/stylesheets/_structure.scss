@@ -3,13 +3,4 @@
 
 body {
   padding: 40px;
-  @include outer-container;
-
-  h1 { 
-  	@include span-columns(3);
-  }
-
-  p{
-  	@include span-columns(6);
-  }
 }
