@@ -18,6 +18,18 @@ module.exports = function(grunt) {
           dest: 'dist/assets/css',
           ext: '.css'
         }]
+      },
+      options: {
+        sourcemap: 'none',
+        loadPath: [
+          'bower_components/bourbon/app/assets/stylesheets',
+          'bower_components/neat/app/assets/stylesheets'
+        ]
+      },
+      buildSassFiles: {
+        files: {
+          'dist/assets/css/main.css': [ 'src/assets/stylesheets/main.scss']
+        }
       }
     },
 
@@ -94,7 +106,7 @@ module.exports = function(grunt) {
       },
       index: {
         files: ['src/index.html'],
-        tasks: ['copy:index'],
+        tasks: ['copy:files'],
         options: {
           spawn: false
         }
