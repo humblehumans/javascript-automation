@@ -19,13 +19,6 @@ module.exports = function(grunt) {
           ext: '.css'
         }]
       },
-      options: {
-        sourcemap: 'none',
-        loadPath: [
-          'bower_components/bourbon/app/assets/stylesheets',
-          'bower_components/neat/app/assets/stylesheets'
-        ]
-      },
       buildSassFiles: {
         files: {
           'dist/assets/css/main.css': [ 'src/assets/stylesheets/main.scss']
